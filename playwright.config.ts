@@ -11,7 +11,7 @@ import type { PlaywrightTestConfig } from '@serenity-js/playwright-test';
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-    testDir: './spec',
+    testDir: './tests',
     /* Maximum time one test can run for. */
     timeout: 30_000,
     expect: {
