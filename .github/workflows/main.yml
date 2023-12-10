@@ -28,12 +28,12 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 30
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: serenity-report
-          path: target/site/serenity
-          retention-days: 30
+      # - uses: actions/upload-artifact@v3
+      #   if: always()
+      #   with:
+      #     name: serenity-report
+      #     path: target/site/serenity
+      #     retention-days: 30
 
       - name: Move Playwright reports
         run: mv playwright-report target/site/playwright
@@ -44,5 +44,5 @@ jobs:
         with:
           ssh-key: ${{ secrets.DEPLOY_KEY }}
           BRANCH: gh-pages
-          FOLDER: target/site
+          FOLDER: target/site/playwright
           CLEAN: true
