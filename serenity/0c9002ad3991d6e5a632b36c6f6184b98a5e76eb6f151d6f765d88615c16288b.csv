@@ -1,6 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"API Testing","JSON Placeholder /todos should retrieve a todo item by id","SUCCESS","2023-12-10T04:51:46.519Z[Etc/UTC]","0.0","0.58"
-"Recording items","Todo List App should allow me to add todo items","SUCCESS","2023-12-10T04:51:49.45Z[Etc/UTC]","0.0","0.57"
-"Recording items","Todo List App should clear text input field when an item is added","SUCCESS","2023-12-10T04:51:50.022Z[Etc/UTC]","0.0","0.44"
-"Recording items","Todo List App should reflect the number of items left in the counter","SUCCESS","2023-12-10T04:51:50.47Z[Etc/UTC]","0.0","0.63"
-"Recording items","Todo List App should show #main and #footer sections only when list contains items","SUCCESS","2023-12-10T04:51:51.109Z[Etc/UTC]","0.0","0.98"
