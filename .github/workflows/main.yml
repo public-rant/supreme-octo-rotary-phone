@@ -24,14 +24,10 @@ jobs:
           node-version: '18.x'
       - name: Setup Node Modules
         uses: bahmutov/npm-install@v1
-      - name: Make Tests
-        env:
-          TESTS: ${{ github.event.client_payload.tests }}
-        run: make tests -e TESTS=$TESTS
       # - name: Install Playwright Browsers
       #   run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: yarn run test:execute
+        run: make tests -e TESTS=${{ github.event.client_payload.tests }} && yarn run test:execute
       - uses: actions/upload-artifact@v3
         if: always()
         with:
