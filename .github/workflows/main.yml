@@ -27,7 +27,7 @@ jobs:
       - name: Make Tests
         env:
           TESTS: ${{ github.event.client_payload.tests }}
-        run: make all -e TESTS=$TESTS
+        run: make tests -e TESTS=$TESTS
       # - name: Install Playwright Browsers
       #   run: npx playwright install --with-deps
       - name: Run Playwright tests
