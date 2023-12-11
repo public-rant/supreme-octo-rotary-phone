@@ -44,11 +44,11 @@ jobs:
       - name: Move Playwright reports
         run: mv playwright-report target/site/playwright
 
-      - name: GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
-        with:
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
-          BRANCH: gh-pages
-          FOLDER: target/site/playwright
-          CLEAN: true
+      # - name: GitHub Pages
+      #   if: github.ref == 'refs/heads/main'
+      #   uses: JamesIves/github-pages-deploy-action@v4.5.0
+      #   with:
+      #     ssh-key: ${{ secrets.DEPLOY_KEY }}
+      #     BRANCH: gh-pages
+      #     FOLDER: target/site/playwright
+      #     CLEAN: true
