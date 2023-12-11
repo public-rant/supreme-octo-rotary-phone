@@ -16,18 +16,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ['18.x']
+        TESTS: ['boom']
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.version }}
+          node-version: '18.x'
       - name: Setup Node Modules
         uses: bahmutov/npm-install@v1
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      - name: Make Tests
+      - env:
+          TESTS: ${{ github.event.client_payload.tests }}
+        run: make tests -e TESTS=$TESTS
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npm test
+        run: npm test:execute
       - uses: actions/upload-artifact@v3
         if: always()
         with:

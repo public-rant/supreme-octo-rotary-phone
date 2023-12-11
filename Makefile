@@ -7,4 +7,10 @@ default:
 		https://api.github.com/repos/public-rant/supreme-octo-rotary-phone/dispatches \
 		-d '{ "event_type": "test", "client_payload": { "versions": ["18.x"] } }'
 
+
+tests/%.spec.ts:
+	@pandoc -M name=$* -M collection=$(collection) -f html -t gfm  --template draft.md $@ -o $@
+
 	
+all:
+	@echo $(TESTS) | base64 -d | jq -r 'map("-e collection=\"\(.use.collection)\" tests/\(.name).spec.ts")[]' | xargs $(MAKE)
