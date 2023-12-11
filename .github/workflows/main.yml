@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node Modules
         uses: bahmutov/npm-install@v1
       - name: Make Tests
-      - env:
+        env:
           TESTS: ${{ github.event.client_payload.tests }}
         run: make tests -e TESTS=$TESTS
       # - name: Install Playwright Browsers
