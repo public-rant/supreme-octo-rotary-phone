@@ -7,7 +7,7 @@
     "postinstall": "serenity-bdd update",
     "clean": "rimraf playwright-report target",
     "test": "failsafe clean test:execute test:report",
-    "test:execute": "playwright test --list --pass-with-no-tests",
+    "test:execute": "playwright test --list",
     "test:report": "serenity-bdd run",
     "start": "mkdirp target/site/serenity && npx http-server -p 8080 target/site/serenity -s -o",
     "lint": "eslint --ext ts --config .eslintrc.js .",
