@@ -15,4 +15,4 @@ dispatch:
 		-H "Authorization: Bearer $$(gh auth token)" \
 		-H "X-GitHub-Api-Version: 2022-11-28" \
 		https://api.github.com/repos/public-rant/supreme-octo-rotary-phone/dispatches \
-		-d '{ "event_type": "test", "client_payload": { "versions": ["$(TESTS)"] } }'
+		-d '{ "event_type": "test", "client_payload": { "tests": ["$(TESTS)"] } }'
