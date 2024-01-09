@@ -88,7 +88,7 @@ jobs:
       - name: Connect to PostgreSQL
         # Runs a script that creates a PostgreSQL table, populates
         # the table with data, and then retrieves the data
-        run: node client.js
+        run: node ./client.js
         # Environment variables used by the `client.js` script to create
         # a new PostgreSQL table.
         env:
