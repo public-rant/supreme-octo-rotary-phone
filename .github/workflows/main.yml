@@ -46,6 +46,7 @@ on:
   repository_dispatch:
     types:
       - test
+      - workflow_dispatch
 
 jobs:
   hello_world_job:
