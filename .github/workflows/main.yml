@@ -44,6 +44,11 @@ on:
     branches: [ main ]
     types: [ opened, synchronize ]
   workflow_dispatch:
+    inputs:
+      tests:
+        description: 'Environment to run tests against'
+        type: string
+        required: true
   repository_dispatch:
     types:
       - test
